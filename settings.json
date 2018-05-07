@@ -1,0 +1,12 @@
+{
+  "type": "torch.cuda.FloatTensor",
+  "policy": "Policies/policy2.json",
+  "minGameScoreRatio": 0.85,
+  "minGameSequence": 500,
+  "gameMinutesLength": 2880,
+  "batchSize": 64,
+  "TAU": 0.001,
+  "gamma": 0.95,
+  "learningRate": 0.001,
+  "dequeSize": 50000
+}

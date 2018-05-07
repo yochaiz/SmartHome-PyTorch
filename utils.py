@@ -12,9 +12,12 @@ import signal
 def parseArguments():
     parser = argparse.ArgumentParser(description='PyTorch SmartHome Training')
     parser.add_argument('--results_dir', metavar='RESULTS_DIR', type=str, default='./results', help='results dir')
-    parser.add_argument('--type', default='torch.cuda.FloatTensor', help='type of tensor - e.g torch.cuda.HalfTensor')
+    parser.add_argument("--settings", type=str, default='./settings.json', help="Settings JSON file")
     parser.add_argument('--gpus', default=0, type=int, help='gpus used for training - e.g 0,1,3')
     parser.add_argument('--workers', default=2, type=int, metavar='N', help='number of data loading workers')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--sequential", action='store_true', help="Init sequential state for a new game")
+    group.add_argument("--random", action='store_true', help="Init random state for a new game")
     # TODO: move some parameters to settings.json
     # TODO: add --resume option
 
